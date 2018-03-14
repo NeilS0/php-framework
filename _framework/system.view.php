@@ -20,15 +20,13 @@ abstract class IView{
 		$this->ViewData = null;
 	}
 
-	/*this function is used by the layout
-	private function GetSandbox()
+	abstract public function Render();
+
+	//this function is used by the layout
+	public function GetSandbox()
 	{
 		return $this->Content;
 	}
-	*/
-
-
-	abstract public function Render();
 };
 
 ?>
