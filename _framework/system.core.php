@@ -25,11 +25,15 @@ class SystemCore{
 		}
 
 		if (!$view_found){
-			echo "VIEW DOES NOT EXIST";
+			// echo "VIEW DOES NOT EXIST";
+			return false;
 		} else {
 			include_once("system.view.php");
 			include("views/{$iview}.php");
+			return true;
 		}
+
+		return false;
 	}
 
 	//private function IncludeControllers()
@@ -49,11 +53,15 @@ class SystemCore{
 		}
 
 		if (!$controller_found){
-			echo "CONTROLLER DOES NOT EXIST";
+			//echo "CONTROLLER DOES NOT EXIST";
+			return false;
 		} else {
 			include_once("system.controller.php");
 			include("controllers/{$icontroller}.php");
+			return true;
 		}
+
+		return false;
 	}
 }
 ?>

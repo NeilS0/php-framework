@@ -18,36 +18,41 @@ abstract class System{
 		$this->System = new SystemCore();
 	}
 
+	/*
 	public function PrintViews()
 	{
 	}
-
-	/*
-	public function RegisterClass()
-	{
-		$this->System->IncludeView($this->View);
-		$this->System->IncludeController($this->Controller);
-
-		//instaniate the view and controller
-		//$this->View = eval("new {$this->View}");
-		//$this->Controller = eval("new {$this->Controller}");
-	}
 	*/
+
 	public function RegisterClassView()
 	{
-		$this->System->IncludeView($this->View);
+		if ($this->System->IncludeView($this->View)){
+			
+			//after included, instaniate the view object
+			eval("\$this->View = new {$this->View}();");
+			
+			return true;
+		} else {
 
-		//instaniate the view and controller
-		//$this->View = eval("new {$this->View}");
-		//$this->Controller = eval("new {$this->Controller}");
+			echo "VIEW DOES NOT EXIST";
+			return false;
+		}
+		return false;
 	}
 	public function RegisterClassController()
 	{
-		$this->System->IncludeController($this->Controller);
+		if ($this->System->IncludeController($this->Controller)){
+			
+			//after included, instaniate the controller object
+			eval("\$this->Controller = new {$this->Controller}();");
+			
+			return true;
+		} else {
 
-		//instaniate the view and controller
-		//$this->View = eval("new {$this->View}");
-		//$this->Controller = eval("new {$this->Controller}");
+			echo "CONTROLLER DOES NOT EXIST";
+			return false;
+		}
+		return false;
 	}
 
 };

@@ -13,15 +13,21 @@ class Page extends System{
 	public function RegisterView($iview)
 	{
 		$this->View = $iview;
-		//$this->RegisterClass();
 		$this->RegisterClassView();
+
+		echo "<pre>";
+		print_r($this->View);
+		echo "</pre>";
 	}
 	//public function RegisterController($viewname, $icontroller)
 	public function RegisterController($icontroller)
 	{
 		$this->Controller = $icontroller;
-		//$this->RegisterClass();
 		$this->RegisterClassController();
+
+		echo "<pre>";
+		print_r($this->Controller);
+		echo "</pre>";
 	}
 
 	public function Present()
