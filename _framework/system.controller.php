@@ -12,7 +12,7 @@ abstract class IController{
 	}
 
 	//main function
-	abstract public function ProcessEvents();
+	abstract public function ProcessEvents(&$ViewData);
 
 };
 
