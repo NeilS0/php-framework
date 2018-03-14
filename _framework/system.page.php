@@ -13,13 +13,15 @@ class Page extends System{
 	public function RegisterView($iview)
 	{
 		$this->View = $iview;
-		$this->RegisterClass();
+		//$this->RegisterClass();
+		$this->RegisterClassView();
 	}
 	//public function RegisterController($viewname, $icontroller)
 	public function RegisterController($icontroller)
 	{
 		$this->Controller = $icontroller;
-		$this->RegisterClass();
+		//$this->RegisterClass();
+		$this->RegisterClassController();
 	}
 
 	public function Present()
