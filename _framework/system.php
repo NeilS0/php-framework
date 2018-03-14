@@ -38,7 +38,7 @@ abstract class System{
 			return true;
 		} else {
 
-			echo "VIEW DOES NOT EXIST";
+			echo "VIEW, {$this->View}, DOES NOT EXIST<br>";
 			return false;
 		}
 		return false;
@@ -53,7 +53,7 @@ abstract class System{
 			return true;
 		} else {
 
-			echo "CONTROLLER DOES NOT EXIST";
+			echo "CONTROLLER, {$this->Controller}, DOES NOT EXIST<br>";
 			return false;
 		}
 		return false;
@@ -67,7 +67,7 @@ abstract class System{
 		//$this->Controller->ProcessEvents($this->View->ViewData);
 		$this->Controller->Process($this->View->ViewData);
 	}
-	
+
 	//render the view
 	public function RenderView()
 	{

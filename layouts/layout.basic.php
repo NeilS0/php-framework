@@ -2,7 +2,9 @@
 
 /*
 
+	//this layout is use by the registration page
 	this layout can be used by any view
+
 */
 
 include_once("header.incl.php");	//includes the header

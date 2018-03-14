@@ -1,7 +1,7 @@
 <?php
 
 /*
-	controller for the index page
+	controller for the login page
 */ 
 
 class ControllerIndex extends IController{	//IController gets included by the framework
