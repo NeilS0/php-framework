@@ -1,12 +1,16 @@
 <?php
 
-include_once "system.core.php";
+//include_once "system.core.php";
+require_once "system.core.php";
 
 /*
-NOTE:
-the system should automatically include what is in the directories: controllers and views,
-because those 2 folders are part of the framework. 
+	The is main framework class
+
+	NOTE:
+	the framework automatically includes the scripts contained in the folders: controllers, views
+	because these folders are part of the framework.
 */
+
 abstract class System{
 
 	protected $View;	//our view for this page
@@ -17,12 +21,12 @@ abstract class System{
 	{
 		$this->System = new SystemCore();
 	}
-
-	/*
-	public function PrintViews()
+	public function __destruct()
 	{
+		unset($this->Controller);
+		unset($this->View);
+		unset($this->System);
 	}
-	*/
 
 	public function RegisterClassView()
 	{
@@ -60,9 +64,10 @@ abstract class System{
 	//process controller
 	public function ProcessController()
 	{
-		$this->Controller->ProcessEvents($this->View->ViewData);
-		//$this->Controller->Process($this->View->ViewData);
+		//$this->Controller->ProcessEvents($this->View->ViewData);
+		$this->Controller->Process($this->View->ViewData);
 	}
+	
 	//render the view
 	public function RenderView()
 	{

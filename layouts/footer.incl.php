@@ -1,5 +1,9 @@
 <?php
 
+/*
+	the footer includes all the javascript, style tags, etc, before the the closing </body> tag
+*/
+
 echo "
 	<!-- any javascript needs to be linked here -->
 

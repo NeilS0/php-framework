@@ -1,5 +1,9 @@
 <?php
 
+/*
+	each new page (script) you create, needs to include this script and instaniate a Page object
+*/
+
 include_once "system.php";
 
 class Page extends System{
@@ -8,34 +12,27 @@ class Page extends System{
 	{
 		parent::__construct();
 	}
+	public function __destruct()
+	{
+		parent::__destruct();
+	}
 	
-	//public function RegisterView($viewname, $iview)
+
 	public function RegisterView($iview)
 	{
 		$this->View = $iview;
 		$this->RegisterClassView();
-
-		// echo "<pre>";
-		// print_r($this->View);
-		// echo "</pre>";
 	}
-	//public function RegisterController($viewname, $icontroller)
+
 	public function RegisterController($icontroller)
 	{
 		$this->Controller = $icontroller;
 		$this->RegisterClassController();
-
-		// echo "<pre>";
-		// print_r($this->Controller);
-		// echo "</pre>";
 	}
 
 	public function Present()
 	{
-		//we need to first process the controller
-		// then update the view
-		//then show the view
-
+		//first process the controller, because the controller affects the view
 		$this->ProcessController();
 		$this->RenderView();
 	}

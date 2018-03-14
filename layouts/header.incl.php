@@ -1,5 +1,9 @@
 <?php
 
+/*
+    the header includes the doctype, the title, all links, etc, before the the opening <body> tag
+*/
+
 $additionalCSS = "";
 if ($_SERVER["SCRIPT_NAME"] == "/register/login.php"){
 
