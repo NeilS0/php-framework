@@ -55,6 +55,21 @@ abstract class System{
 		return false;
 	}
 
+
+
+	//process controller
+	public function ProcessController()
+	{
+		$this->Controller->ProcessEvents($this->View->ViewData);
+		//$this->Controller->Process($this->View->ViewData);
+	}
+	//render the view
+	public function RenderView()
+	{
+		$this->View->Render();
+	}
+
+
 };
 
 ?>

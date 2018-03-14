@@ -15,9 +15,9 @@ class Page extends System{
 		$this->View = $iview;
 		$this->RegisterClassView();
 
-		echo "<pre>";
-		print_r($this->View);
-		echo "</pre>";
+		// echo "<pre>";
+		// print_r($this->View);
+		// echo "</pre>";
 	}
 	//public function RegisterController($viewname, $icontroller)
 	public function RegisterController($icontroller)
@@ -25,13 +25,19 @@ class Page extends System{
 		$this->Controller = $icontroller;
 		$this->RegisterClassController();
 
-		echo "<pre>";
-		print_r($this->Controller);
-		echo "</pre>";
+		// echo "<pre>";
+		// print_r($this->Controller);
+		// echo "</pre>";
 	}
 
 	public function Present()
 	{
+		//we need to first process the controller
+		// then update the view
+		//then show the view
+
+		$this->ProcessController();
+		$this->RenderView();
 	}
 };
 

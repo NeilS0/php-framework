@@ -11,11 +11,16 @@ class ControllerLogin extends IController{	//IController gets included by the fr
 	}
 	
 	//main function
-	public function ProcessEvents()
+	public function ProcessEvents(&$ViewData)
 	{
+		// print_r($ViewData);
+
+		// $ViewData->ActionIsSet = true;
+		$ViewData->Msg = "This is the index page.";
+
 		switch ($this->Action){
 			case 'Signin':
-				echo "your about to sign in"
+				// echo "your about to sign in";
 				break;
 			
 			default:
