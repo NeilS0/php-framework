@@ -14,7 +14,7 @@ abstract class IView{
 		$this->Content = "";
 		$this->ViewData = null;	//NOTE: ViewData will be used as an object
 	}
-	public function __construct()
+	public function __destruct()
 	{
 		unset($this->Content);
 		unset($this->ViewData);
